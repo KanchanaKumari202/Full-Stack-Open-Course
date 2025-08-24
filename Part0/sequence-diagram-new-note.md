@@ -4,10 +4,11 @@ sequenceDiagram
   participant browser
   participant server
 
+  Note right of browser: User insert data to the textfield and click on Save button
   browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
   activate server
   server-->>browser: HTTP status code 302
-  Note right of browser: URL redirects to https://studies.cs.helsinki.fi/exampleapp/notes
+  Note left of server: URL redirects to https://studies.cs.helsinki.fi/exampleapp/notes
   deactivate server
 
   browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
